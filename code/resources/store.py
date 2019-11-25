@@ -2,7 +2,7 @@ from flask_restful import Resource, reqparse
 from flask_jwt import jwt_required
 
 from models.store import StoreModel
-class store(Resource):
+class Store(Resource):
     """
     reqparse module helps to make sure that required datapoints are there in the payload.
     Also, we can extract the datapoints which are required to update or insert instead of
@@ -34,7 +34,7 @@ class store(Resource):
         return {'message':'store deleted'}
 
 
-class storeList(Resource):
+class StoreList(Resource):
     def get(self):
         # using lambda
         # return {'stores':list(map(lambda x: x.json(), StoreModel.query.all()))}
