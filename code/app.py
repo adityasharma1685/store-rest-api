@@ -14,9 +14,6 @@ app.config['SQLALCHEMY_TRACK_NOTIFICATIONS']=False
 app.secret_key = 'aditya'
 api = Api(app)
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
 
 jwt = JWT(app,authenticate,identity) # /auth
 
